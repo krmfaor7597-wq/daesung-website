@@ -419,7 +419,7 @@
       <div class="logo">KIM DAESUNG</div>
       <div class="nav-links">
         <a href="#about">소개</a>
-        <a href="#network">네트워크</a>
+        <a href="#web">웹 서비스</a>
         <a href="#dns">DNS</a>
         <a href="#electrical">전기공학</a>
         <a href="#finish">정리</a>
@@ -432,16 +432,16 @@
       <div>
         <div class="badge">Kyungnam University · Electrical Engineering</div>
 
-        <h1>Electrical Engineering &<br />Computer Network</h1>
+        <h1>Electrical Engineering &<br />Web Service Network</h1>
 
         <p>
           경남대학교 전기공학과 김대성 포트폴리오 웹사이트.
-          전공 소개와 함께 컴퓨터네트워크 과목에서 다루는 웹, 도메인, DNS, 서버 개념을 정리한 페이지.
+          전공 소개와 함께 웹 서비스가 동작하는 과정에서 필요한 HTML, DNS, 도메인, 웹서버 개념을 정리한 페이지.
         </p>
 
         <div class="buttons">
-          <a class="btn btn-primary" href="#dns">DNS 구조 보기</a>
-          <a class="btn btn-secondary" href="#network">네트워크 개념 보기</a>
+          <a class="btn btn-primary" href="#web">웹 서비스 구조 보기</a>
+          <a class="btn btn-secondary" href="#dns">DNS 파트 보기</a>
         </div>
 
         <div class="status-row">
@@ -464,7 +464,7 @@
         <div class="line line4"></div>
         <div class="line line5"></div>
 
-        <div class="chip">DNS<br />WEB</div>
+        <div class="chip">WEB<br />DNS</div>
 
         <div class="code-box">
           GET /index.html HTTP/1.1<br />
@@ -479,8 +479,8 @@
 
       <p class="section-desc">
         <span class="highlight">경남대학교 전기공학과 김대성</span>.
-        전기공학의 기본 이론과 컴퓨터네트워크의 동작 구조에 관심.
-        전기 시스템과 네트워크 기술이 실제 환경에서 어떻게 연결되는지 학습 중.
+        전기공학의 기본 이론과 웹 서비스가 동작하는 네트워크 구조에 관심.
+        전기 시스템과 소프트웨어, 네트워크 기술이 실제 환경에서 어떻게 연결되는지 학습 중.
       </p>
 
       <div class="grid">
@@ -496,42 +496,37 @@
 
         <div class="card">
           <h3>관심 분야</h3>
-          <p>전기공학, 제어, 회로, 임베디드 시스템, 컴퓨터 네트워크</p>
+          <p>전기공학, 제어, 회로, 임베디드 시스템, 웹 서비스 네트워크</p>
         </div>
       </div>
     </section>
 
-    <section id="network">
-      <h2 class="section-title">컴퓨터네트워크 과목 소개</h2>
+    <section id="web">
+      <h2 class="section-title">웹 서비스와 네트워크</h2>
 
       <p class="section-desc">
-        컴퓨터네트워크는 컴퓨터와 서버가 데이터를 주고받는 원리를 다루는 과목.
-        웹사이트 접속 과정에는 도메인 이름, DNS, IP 주소, HTTP 요청과 응답, 웹서버가 함께 동작.
+        컴퓨터네트워크 과목의 여러 주제 중 이 페이지는 웹 서비스 동작 과정에 초점을 둔 구성.
+        사용자가 웹사이트에 접속할 때 HTML, DNS, IP 주소, HTTP, 웹서버가 순서대로 연결된다.
       </p>
 
       <div class="grid">
         <div class="wide-card">
-          <h3>웹사이트 접속은 하나의 네트워크 흐름</h3>
+          <h3>웹사이트 접속 과정</h3>
           <p>
-            사용자가 브라우저에 주소를 입력하면, 브라우저는 먼저 해당 주소가 어느 서버를 가리키는지 확인한다.
-            이때 DNS가 도메인 이름을 IP 주소로 바꾸고, 브라우저는 변환된 주소를 이용해 웹서버에 접속한다.
-            서버는 HTML, CSS, JavaScript 파일을 응답하고, 브라우저는 이를 해석해 화면에 표시한다.
+            사용자가 브라우저에 주소를 입력하면 브라우저는 먼저 도메인이 가리키는 서버 주소를 찾는다.
+            DNS를 통해 IP 주소를 확인하고, 이후 웹서버에 HTTP 요청을 보낸다.
+            서버는 HTML, CSS, JavaScript 파일을 응답하고 브라우저는 이를 해석해 화면에 표시한다.
           </p>
         </div>
 
         <div class="card">
-          <h3>Domain</h3>
-          <p>사람이 기억하기 쉬운 웹사이트 주소. 실제 통신은 IP 주소를 기반으로 진행.</p>
+          <h3>HTML</h3>
+          <p>웹페이지의 제목, 문단, 메뉴, 카드, 섹션 같은 기본 구조를 만드는 언어.</p>
         </div>
 
         <div class="card">
-          <h3>DNS</h3>
-          <p>도메인 이름을 서버 IP 주소로 변환하는 시스템. 인터넷의 주소 안내 역할.</p>
-        </div>
-
-        <div class="card">
-          <h3>IP Address</h3>
-          <p>네트워크에서 서버와 장치를 구분하기 위한 숫자 기반 주소 체계.</p>
+          <h3>CSS</h3>
+          <p>웹페이지의 색상, 배치, 크기, 반응형 화면, 시각적 디자인을 담당.</p>
         </div>
 
         <div class="card">
@@ -540,8 +535,13 @@
         </div>
 
         <div class="card">
+          <h3>Domain</h3>
+          <p>사용자가 기억하기 쉬운 웹사이트 주소. 실제 통신은 IP 주소를 기반으로 진행.</p>
+        </div>
+
+        <div class="card">
           <h3>Web Server</h3>
-          <p>브라우저의 요청에 따라 웹페이지 파일을 제공하는 서버.</p>
+          <p>브라우저 요청에 따라 웹페이지 파일을 제공하는 서버.</p>
         </div>
 
         <div class="card">
@@ -552,12 +552,11 @@
     </section>
 
     <section id="dns">
-      <h2 class="section-title">도메인과 DNS 시스템</h2>
+      <h2 class="section-title">컴퓨터네트워크 속 DNS 파트</h2>
 
       <p class="section-desc">
-        DNS는 도메인 이름과 IP 주소를 연결하는 핵심 시스템.
-        사용자는 복잡한 IP 주소를 직접 외우지 않고 도메인 이름으로 웹사이트에 접속 가능.
-        이 과정은 컴퓨터네트워크에서 웹 서비스의 동작 구조를 이해하는 기본 흐름.
+        DNS는 웹 서비스 접속 과정에서 도메인 이름을 IP 주소로 변환하는 핵심 요소.
+        사용자는 복잡한 숫자 주소 대신 도메인 이름을 사용하고, DNS는 해당 이름이 연결된 서버 주소를 찾아준다.
       </p>
 
       <div class="diagram">
@@ -600,11 +599,11 @@
         </div>
 
         <div class="wide-card">
-          <h3>과목에서 이해할 핵심</h3>
+          <h3>이 파트에서 보는 핵심</h3>
           <p>
-            이 과제의 목적은 단순히 홈페이지를 꾸미는 것이 아니라,
-            사용자가 입력한 도메인 주소가 DNS를 거쳐 실제 웹서버로 연결되는 과정을 이해하는 것.
-            도메인, DNS 레코드, IP 주소, 웹서버, HTTP 응답이 하나의 흐름으로 연결된다는 점이 핵심.
+            DNS 파트의 핵심은 도메인 이름과 실제 서버 주소가 어떻게 연결되는지 이해하는 것.
+            웹사이트 접속은 단순히 주소를 입력하는 과정이 아니라,
+            도메인 조회, IP 주소 확인, 서버 요청, 웹페이지 응답이 이어지는 네트워크 흐름이다.
           </p>
         </div>
       </div>
@@ -656,8 +655,8 @@
 
       <p class="section-desc">
         이 웹사이트는 자기소개와 전공 소개를 바탕으로,
-        컴퓨터네트워크 과목의 핵심 개념인 도메인, DNS, IP 주소, 웹서버, HTTP 통신 구조를 함께 정리한 페이지.
-        웹사이트 접속이 단순한 화면 출력이 아니라 여러 네트워크 요소가 연결된 결과라는 점을 보여주는 구성.
+        컴퓨터네트워크 과목 중 웹 서비스와 DNS 파트를 중심으로 정리한 페이지.
+        도메인 이름이 DNS를 거쳐 웹서버와 연결되고, 브라우저가 HTML 파일을 받아 화면에 표시하는 흐름을 보여주는 구성.
       </p>
 
       <div class="grid">
@@ -673,14 +672,14 @@
 
         <div class="card">
           <h3>주제</h3>
-          <p>컴퓨터네트워크 기반 자기소개 포트폴리오 웹사이트</p>
+          <p>웹 서비스와 DNS 구조를 중심으로 한 포트폴리오 웹사이트</p>
         </div>
       </div>
     </section>
   </main>
 
   <footer>
-    © 2026 Kim Daesung Portfolio Website · Computer Network Mini Project
+    © 2026 Kim Daesung Portfolio Website · Web Service & DNS Project
   </footer>
 </body>
 </html>
