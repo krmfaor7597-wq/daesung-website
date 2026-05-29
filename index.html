@@ -14,11 +14,16 @@
       padding: 0;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: Arial, "Noto Sans KR", sans-serif;
       background:
-        radial-gradient(circle at top left, rgba(94, 234, 212, 0.18), transparent 32%),
-        radial-gradient(circle at bottom right, rgba(56, 189, 248, 0.16), transparent 34%),
+        radial-gradient(circle at 12% 8%, rgba(94, 234, 212, 0.16), transparent 28%),
+        radial-gradient(circle at 88% 18%, rgba(56, 189, 248, 0.14), transparent 30%),
+        radial-gradient(circle at 50% 90%, rgba(14, 165, 233, 0.10), transparent 34%),
         #06111f;
       color: #f5f7fb;
       line-height: 1.6;
@@ -33,14 +38,14 @@
     header {
       position: sticky;
       top: 0;
-      z-index: 50;
+      z-index: 100;
       background: rgba(6, 17, 31, 0.92);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     }
 
     nav {
-      max-width: 1150px;
+      max-width: 1180px;
       margin: 0 auto;
       padding: 18px 20px;
       display: flex;
@@ -61,54 +66,22 @@
       color: #cbd5e1;
     }
 
-    .nav-links button {
-      background: none;
-      border: none;
-      color: inherit;
-      cursor: pointer;
-      font: inherit;
+    .nav-links a {
       transition: 0.2s;
     }
 
-    .nav-links button:hover,
-    .nav-links button.active {
+    .nav-links a:hover {
       color: #5eead4;
     }
 
-    .slider {
-      max-width: 1150px;
-      margin: 0 auto;
-      padding: 70px 20px 40px;
-      min-height: calc(100vh - 80px);
-      position: relative;
-    }
-
-    .page {
-      display: none;
-      animation: fade 0.45s ease;
-    }
-
-    .page.active {
-      display: block;
-    }
-
-    @keyframes fade {
-      from {
-        opacity: 0;
-        transform: translateY(18px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
     .hero {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 90px 20px 80px;
       display: grid;
       grid-template-columns: 1.1fr 0.9fr;
       gap: 45px;
       align-items: center;
-      min-height: 560px;
     }
 
     .badge {
@@ -129,16 +102,11 @@
       letter-spacing: -1px;
     }
 
-    h2 {
-      font-size: 38px;
-      margin-bottom: 16px;
-    }
-
-    .desc {
+    .hero p {
+      font-size: 19px;
       color: #cbd5e1;
-      font-size: 18px;
-      max-width: 780px;
-      margin-bottom: 32px;
+      margin-bottom: 30px;
+      max-width: 650px;
     }
 
     .buttons {
@@ -151,8 +119,6 @@
     .btn {
       padding: 13px 20px;
       border-radius: 12px;
-      border: none;
-      cursor: pointer;
       font-weight: 800;
       transition: 0.2s;
     }
@@ -163,7 +129,6 @@
     }
 
     .btn-secondary {
-      background: transparent;
       border: 1px solid rgba(255, 255, 255, 0.18);
       color: #e2e8f0;
     }
@@ -193,7 +158,7 @@
 
     .visual-card {
       position: relative;
-      min-height: 390px;
+      min-height: 400px;
       border-radius: 30px;
       background:
         linear-gradient(135deg, rgba(15, 23, 42, 0.96), rgba(8, 47, 73, 0.76)),
@@ -217,10 +182,10 @@
 
     .chip {
       position: absolute;
-      width: 130px;
-      height: 130px;
+      width: 135px;
+      height: 135px;
       left: 50%;
-      top: 47%;
+      top: 46%;
       transform: translate(-50%, -50%);
       border-radius: 24px;
       background: rgba(2, 6, 23, 0.94);
@@ -233,6 +198,7 @@
       font-weight: 900;
       letter-spacing: 1px;
       animation: pulse 3s infinite;
+      text-align: center;
     }
 
     @keyframes pulse {
@@ -290,6 +256,23 @@
       font-size: 14px;
     }
 
+    section {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 75px 20px;
+    }
+
+    .section-title {
+      font-size: 36px;
+      margin-bottom: 16px;
+    }
+
+    .section-desc {
+      color: #cbd5e1;
+      margin-bottom: 35px;
+      max-width: 800px;
+    }
+
     .grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -322,6 +305,80 @@
       font-size: 15px;
     }
 
+    .process {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 14px;
+      margin-top: 20px;
+    }
+
+    .process-step {
+      position: relative;
+      padding: 22px 18px;
+      border-radius: 20px;
+      background: rgba(2, 6, 23, 0.66);
+      border: 1px solid rgba(94, 234, 212, 0.18);
+      min-height: 150px;
+    }
+
+    .process-step strong {
+      display: block;
+      color: #38bdf8;
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .process-step h3 {
+      color: #5eead4;
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .process-step p {
+      color: #cbd5e1;
+      font-size: 14px;
+    }
+
+    .diagram {
+      margin-top: 35px;
+      padding: 28px;
+      border-radius: 26px;
+      background: rgba(15, 23, 42, 0.72);
+      border: 1px solid rgba(255, 255, 255, 0.09);
+    }
+
+    .diagram-flow {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+      align-items: center;
+      text-align: center;
+    }
+
+    .flow-box {
+      padding: 18px 12px;
+      border-radius: 18px;
+      background: rgba(2, 6, 23, 0.75);
+      border: 1px solid rgba(94, 234, 212, 0.22);
+    }
+
+    .flow-box span {
+      display: block;
+      color: #5eead4;
+      font-weight: 800;
+      margin-bottom: 6px;
+    }
+
+    .flow-box small {
+      color: #cbd5e1;
+    }
+
+    .arrow {
+      color: #38bdf8;
+      font-size: 24px;
+      font-weight: 900;
+    }
+
     .timeline {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -340,71 +397,45 @@
       color: #38bdf8;
     }
 
-    .slide-controls {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 18px;
-      margin-top: 38px;
-    }
-
-    .arrow-buttons {
-      display: flex;
-      gap: 12px;
-    }
-
-    .dots {
-      display: flex;
-      gap: 9px;
-    }
-
-    .dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 999px;
-      border: none;
-      background: rgba(255, 255, 255, 0.28);
-      cursor: pointer;
-      transition: 0.2s;
-    }
-
-    .dot.active {
-      width: 28px;
-      background: #5eead4;
+    .highlight {
+      color: #5eead4;
+      font-weight: 800;
     }
 
     footer {
-      padding: 28px 20px;
+      padding: 42px 20px;
       text-align: center;
       color: #94a3b8;
       border-top: 1px solid rgba(255, 255, 255, 0.08);
       background: #020617;
     }
 
-    @media (max-width: 850px) {
+    @media (max-width: 900px) {
       .hero {
         grid-template-columns: 1fr;
-        min-height: auto;
+        padding-top: 60px;
       }
 
       h1 {
-        font-size: 39px;
+        font-size: 40px;
       }
 
-      .grid {
-        grid-template-columns: 1fr;
-      }
-
+      .grid,
+      .process,
       .timeline {
         grid-template-columns: 1fr;
       }
 
-      .nav-links {
-        display: none;
+      .diagram-flow {
+        grid-template-columns: 1fr;
       }
 
-      .slide-controls {
-        flex-direction: column;
+      .arrow {
+        transform: rotate(90deg);
+      }
+
+      .nav-links {
+        display: none;
       }
     }
   </style>
@@ -414,71 +445,69 @@
   <header>
     <nav>
       <div class="logo">KIM DAESUNG</div>
-
       <div class="nav-links">
-        <button class="active" onclick="showPage(0)">Home</button>
-        <button onclick="showPage(1)">Profile</button>
-        <button onclick="showPage(2)">Network</button>
-        <button onclick="showPage(3)">Electrical</button>
-        <button onclick="showPage(4)">Project</button>
+        <a href="#about">소개</a>
+        <a href="#network">네트워크</a>
+        <a href="#dns">DNS 과정</a>
+        <a href="#electrical">전기공학</a>
+        <a href="#project">프로젝트</a>
       </div>
     </nav>
   </header>
 
-  <main class="slider">
-    <section class="page active">
-      <div class="hero">
-        <div>
-          <div class="badge">Kyungnam University · Electrical Engineering</div>
+  <main>
+    <section class="hero">
+      <div>
+        <div class="badge">Kyungnam University · Electrical Engineering</div>
 
-          <h1>Electrical Engineering &<br />Computer Network</h1>
+        <h1>Electrical Engineering &<br />Computer Network</h1>
 
-          <p class="desc">
-            경남대학교 전기공학과 김대성 포트폴리오 웹사이트.
-            전공 소개, 컴퓨터네트워크 학습 내용, GitHub Pages 제작 과정 정리.
-          </p>
+        <p>
+          경남대학교 전기공학과 김대성 포트폴리오 웹사이트.
+          컴퓨터네트워크 수업의 웹 배포 과정, 도메인 연결 과정, 전공 관련 내용을 정리한 페이지.
+        </p>
 
-          <div class="buttons">
-            <button class="btn btn-primary" onclick="showPage(1)">자기소개</button>
-            <button class="btn btn-secondary" onclick="showPage(4)">프로젝트 과정</button>
-          </div>
-
-          <div class="status-row">
-            <div class="status"><strong>STATUS</strong> ONLINE</div>
-            <div class="status"><strong>SERVER</strong> GitHub Pages</div>
-            <div class="status"><strong>PROTOCOL</strong> HTTP / HTTPS</div>
-          </div>
+        <div class="buttons">
+          <a class="btn btn-primary" href="#dns">DNS 과정 보기</a>
+          <a class="btn btn-secondary" href="#project">제작 과정 보기</a>
         </div>
 
-        <div class="visual-card">
-          <div class="node n1"></div>
-          <div class="node n2"></div>
-          <div class="node n3"></div>
-          <div class="node n4"></div>
-          <div class="node n5"></div>
+        <div class="status-row">
+          <div class="status"><strong>DOMAIN</strong> daesung2024111339.store</div>
+          <div class="status"><strong>SERVER</strong> GitHub Pages</div>
+          <div class="status"><strong>STATUS</strong> ONLINE</div>
+        </div>
+      </div>
 
-          <div class="line line1"></div>
-          <div class="line line2"></div>
-          <div class="line line3"></div>
-          <div class="line line4"></div>
-          <div class="line line5"></div>
+      <div class="visual-card">
+        <div class="node n1"></div>
+        <div class="node n2"></div>
+        <div class="node n3"></div>
+        <div class="node n4"></div>
+        <div class="node n5"></div>
 
-          <div class="chip">PORTFOLIO</div>
+        <div class="line line1"></div>
+        <div class="line line2"></div>
+        <div class="line line3"></div>
+        <div class="line line4"></div>
+        <div class="line line5"></div>
 
-          <div class="code-box">
-            GET /index.html HTTP/1.1<br />
-            Host: daesung-website.github.io<br />
-            Response: 200 OK
-          </div>
+        <div class="chip">WEB<br />SITE</div>
+
+        <div class="code-box">
+          GET /index.html HTTP/1.1<br />
+          Host: daesung2024111339.store<br />
+          Response: 200 OK
         </div>
       </div>
     </section>
 
-    <section class="page">
-      <h2>Profile</h2>
-      <p class="desc">
-        경남대학교 전기공학과 김대성.
-        전기공학 기초 이론과 네트워크 구조를 함께 학습하며 실제 시스템 구현에 관심.
+    <section id="about">
+      <h2 class="section-title">자기소개</h2>
+      <p class="section-desc">
+        <span class="highlight">경남대학교 전기공학과 김대성</span>.
+        전기공학의 기본 이론과 컴퓨터네트워크의 동작 구조를 함께 학습.
+        웹사이트 제작 과정을 통해 도메인, DNS, 서버, 배포 개념을 실제 결과물로 연결.
       </p>
 
       <div class="grid">
@@ -496,179 +525,198 @@
           <h3>관심 분야</h3>
           <p>전기공학, 제어, 회로, 임베디드 시스템, 컴퓨터 네트워크</p>
         </div>
-
-        <div class="card">
-          <h3>학습 방향</h3>
-          <p>이론 중심 학습에서 실제 동작하는 결과물 제작으로 확장</p>
-        </div>
-
-        <div class="card">
-          <h3>웹 제작</h3>
-          <p>HTML, CSS, JavaScript 기반 자기소개 홈페이지 구성</p>
-        </div>
-
-        <div class="card">
-          <h3>배포 환경</h3>
-          <p>GitHub Pages를 이용한 정적 웹사이트 공개</p>
-        </div>
       </div>
     </section>
 
-    <section class="page">
-      <h2>Computer Network</h2>
-      <p class="desc">
-        웹사이트 접속 과정 속 네트워크 개념.
-        IP 주소, DNS, TCP/IP, HTTP, HTTPS가 연결되어 하나의 웹 서비스 구성.
+    <section id="network">
+      <h2 class="section-title">컴퓨터 네트워크 핵심 개념</h2>
+      <p class="section-desc">
+        웹사이트 접속은 단순히 주소를 입력하는 과정이 아니라,
+        도메인 이름 해석, 서버 연결, HTTP 요청과 응답이 순서대로 이어지는 네트워크 과정.
       </p>
 
       <div class="grid">
         <div class="card">
-          <h3>TCP/IP</h3>
-          <p>인터넷 통신의 기본 구조와 데이터 전달 방식</p>
+          <h3>IP Address</h3>
+          <p>네트워크에서 서버와 장치를 구분하는 주소.</p>
         </div>
 
         <div class="card">
           <h3>DNS</h3>
-          <p>도메인 이름을 IP 주소로 변환하는 시스템</p>
+          <p>도메인 이름을 실제 서버 IP 주소로 변환하는 시스템.</p>
         </div>
 
         <div class="card">
           <h3>HTTP / HTTPS</h3>
-          <p>브라우저와 서버 사이의 요청 및 응답 구조</p>
+          <p>브라우저와 웹서버 사이의 요청 및 응답 규칙.</p>
         </div>
 
         <div class="card">
-          <h3>IP Address</h3>
-          <p>네트워크에서 장치를 구분하는 주소 체계</p>
+          <h3>GitHub Pages</h3>
+          <p>HTML, CSS, JavaScript 파일을 정적 웹사이트로 공개하는 서비스.</p>
         </div>
 
         <div class="card">
-          <h3>Port</h3>
-          <p>하나의 장치 안에서 프로그램을 구분하는 번호</p>
+          <h3>Domain</h3>
+          <p>사람이 기억하기 쉬운 웹사이트 주소.</p>
         </div>
 
         <div class="card">
-          <h3>Wireshark</h3>
-          <p>패킷 캡처와 분석을 통한 네트워크 흐름 확인</p>
+          <h3>DNS Record</h3>
+          <p>A 레코드를 이용해 도메인과 GitHub Pages 서버 IP를 연결.</p>
         </div>
       </div>
     </section>
 
-    <section class="page">
-      <h2>Electrical Engineering</h2>
-      <p class="desc">
-        전기에너지의 발생, 전달, 변환, 제어, 활용을 다루는 전공 분야.
-        회로, 제어, 전력, 전자, 임베디드 시스템과 연결.
+    <section id="dns">
+      <h2 class="section-title">도메인과 DNS를 통한 웹사이트 접속 과정</h2>
+      <p class="section-desc">
+        이번 과제의 핵심 흐름.
+        사용자가 도메인 주소를 입력하면 DNS가 GitHub Pages 서버 주소를 찾아주고,
+        브라우저는 해당 서버에서 index.html 파일을 받아 화면에 표시.
+      </p>
+
+      <div class="diagram">
+        <div class="diagram-flow">
+          <div class="flow-box">
+            <span>1. Browser</span>
+            <small>도메인 주소 입력</small>
+          </div>
+
+          <div class="arrow">→</div>
+
+          <div class="flow-box">
+            <span>2. DNS</span>
+            <small>도메인 이름을 IP로 변환</small>
+          </div>
+
+          <div class="arrow">→</div>
+
+          <div class="flow-box">
+            <span>3. GitHub Pages</span>
+            <small>웹사이트 파일 제공</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="process">
+        <div class="process-step">
+          <strong>01</strong>
+          <h3>도메인 구매</h3>
+          <p>가비아에서 daesung2024111339.store 도메인 준비.</p>
+        </div>
+
+        <div class="process-step">
+          <strong>02</strong>
+          <h3>DNS 설정</h3>
+          <p>A 레코드에 GitHub Pages 서버 IP 주소 4개 입력.</p>
+        </div>
+
+        <div class="process-step">
+          <strong>03</strong>
+          <h3>GitHub Pages</h3>
+          <p>저장소 Settings에서 Pages 배포 설정.</p>
+        </div>
+
+        <div class="process-step">
+          <strong>04</strong>
+          <h3>Custom Domain</h3>
+          <p>GitHub Pages에 구매한 도메인 이름 등록.</p>
+        </div>
+
+        <div class="process-step">
+          <strong>05</strong>
+          <h3>접속 확인</h3>
+          <p>도메인 주소로 접속해 index.html 표시 확인.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="electrical">
+      <h2 class="section-title">전기공학 소개</h2>
+      <p class="section-desc">
+        전기공학은 전기에너지의 발생, 전달, 변환, 제어, 활용을 다루는 분야.
+        회로, 제어, 전력, 전자, 임베디드 시스템 등 다양한 기술과 연결.
       </p>
 
       <div class="grid">
         <div class="card">
           <h3>회로 이론</h3>
-          <p>전압, 전류, 저항, 전력의 관계와 회로 해석</p>
+          <p>전압, 전류, 저항, 전력의 관계와 회로 해석.</p>
         </div>
 
         <div class="card">
           <h3>제어공학</h3>
-          <p>시스템의 입력과 출력을 조절하는 제어 원리</p>
+          <p>시스템의 입력과 출력을 원하는 방향으로 조절하는 원리.</p>
         </div>
 
         <div class="card">
           <h3>전력 시스템</h3>
-          <p>발전, 송전, 배전, 부하로 이어지는 전기에너지 흐름</p>
+          <p>발전, 송전, 배전, 부하로 이어지는 전기에너지 흐름.</p>
         </div>
 
         <div class="card">
           <h3>전자회로</h3>
-          <p>반도체 소자와 회로 구성을 통한 신호 처리</p>
+          <p>반도체 소자와 회로 구성을 통한 신호 처리.</p>
         </div>
 
         <div class="card">
-          <h3>임베디드</h3>
-          <p>센서, 보드, 코드 기반의 실제 동작 시스템</p>
+          <h3>임베디드 시스템</h3>
+          <p>센서, 보드, 코드 기반의 실제 동작 시스템.</p>
         </div>
 
         <div class="card">
           <h3>융합 기술</h3>
-          <p>전기공학과 소프트웨어, 네트워크 기술의 결합</p>
+          <p>전기공학과 소프트웨어, 네트워크 기술의 결합.</p>
         </div>
       </div>
     </section>
 
-    <section class="page">
-      <h2>Mini Project</h2>
-      <p class="desc">
-        컴퓨터네트워크 미니프로젝트.
-        자기소개 웹사이트 제작과 GitHub Pages 배포 과정을 하나의 결과물로 정리.
+    <section id="project">
+      <h2 class="section-title">미니프로젝트 제작 과정</h2>
+      <p class="section-desc">
+        HTML 파일 작성에서 도메인 연결까지 이어지는 전체 제작 흐름.
       </p>
 
       <div class="timeline">
         <div class="item"><strong>Step 01</strong> GitHub 저장소 생성</div>
         <div class="item"><strong>Step 02</strong> index.html 파일 작성</div>
-        <div class="item"><strong>Step 03</strong> HTML 구조와 CSS 디자인 구성</div>
-        <div class="item"><strong>Step 04</strong> 슬라이드형 페이지 전환 기능 추가</div>
-        <div class="item"><strong>Step 05</strong> GitHub Pages 배포 설정</div>
-        <div class="item"><strong>Step 06</strong> 최종 웹사이트 접속 확인</div>
+        <div class="item"><strong>Step 03</strong> HTML, CSS, JavaScript로 홈페이지 구성</div>
+        <div class="item"><strong>Step 04</strong> GitHub Pages로 웹사이트 배포</div>
+        <div class="item"><strong>Step 05</strong> 가비아 도메인 DNS 설정</div>
+        <div class="item"><strong>Step 06</strong> Custom Domain 등록 후 접속 확인</div>
       </div>
     </section>
 
-    <div class="slide-controls">
-      <div class="arrow-buttons">
-        <button class="btn btn-secondary" onclick="prevPage()">← 이전</button>
-        <button class="btn btn-primary" onclick="nextPage()">다음 →</button>
-      </div>
+    <section id="finish">
+      <h2 class="section-title">마무리</h2>
+      <p class="section-desc">
+        이번 홈페이지는 자기소개, 전공 소개, 컴퓨터네트워크 개념, DNS 기반 웹사이트 연결 과정을 하나로 정리한 결과물.
+        도메인 주소 입력부터 GitHub Pages 서버 응답까지의 흐름을 실제 웹사이트 제작 과정으로 확인.
+      </p>
 
-      <div class="dots">
-        <button class="dot active" onclick="showPage(0)"></button>
-        <button class="dot" onclick="showPage(1)"></button>
-        <button class="dot" onclick="showPage(2)"></button>
-        <button class="dot" onclick="showPage(3)"></button>
-        <button class="dot" onclick="showPage(4)"></button>
+      <div class="grid">
+        <div class="card">
+          <h3>제작자</h3>
+          <p>김대성</p>
+        </div>
+
+        <div class="card">
+          <h3>소속</h3>
+          <p>경남대학교 전기공학과</p>
+        </div>
+
+        <div class="card">
+          <h3>제작 목적</h3>
+          <p>컴퓨터네트워크 미니프로젝트 자기소개 홈페이지 제작.</p>
+        </div>
       </div>
-    </div>
+    </section>
   </main>
 
   <footer>
     © 2026 Kim Daesung Portfolio Website · Computer Network Mini Project
   </footer>
-
-  <script>
-    let currentPage = 0;
-
-    const pages = document.querySelectorAll(".page");
-    const navButtons = document.querySelectorAll(".nav-links button");
-    const dots = document.querySelectorAll(".dot");
-
-    function showPage(index) {
-      currentPage = index;
-
-      pages.forEach(function(page, i) {
-        page.classList.toggle("active", i === index);
-      });
-
-      navButtons.forEach(function(button, i) {
-        button.classList.toggle("active", i === index);
-      });
-
-      dots.forEach(function(dot, i) {
-        dot.classList.toggle("active", i === index);
-      });
-
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-      });
-    }
-
-    function nextPage() {
-      const next = (currentPage + 1) % pages.length;
-      showPage(next);
-    }
-
-    function prevPage() {
-      const prev = (currentPage - 1 + pages.length) % pages.length;
-      showPage(prev);
-    }
-  </script>
 </body>
 </html>
 ```
