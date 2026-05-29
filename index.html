@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>김대성 자기소개 홈페이지</title>
+  <title>김대성 포트폴리오 웹사이트</title>
 
   <style>
     * {
@@ -14,11 +14,19 @@
       padding: 0;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: Arial, "Noto Sans KR", sans-serif;
-      background: #06111f;
+      background:
+        radial-gradient(circle at top left, rgba(94, 234, 212, 0.15), transparent 30%),
+        radial-gradient(circle at top right, rgba(56, 189, 248, 0.16), transparent 28%),
+        #06111f;
       color: #f5f7fb;
       line-height: 1.6;
+      overflow-x: hidden;
     }
 
     a {
@@ -29,14 +37,14 @@
     header {
       position: sticky;
       top: 0;
-      z-index: 10;
-      background: rgba(6, 17, 31, 0.94);
-      backdrop-filter: blur(10px);
+      z-index: 100;
+      background: rgba(6, 17, 31, 0.92);
+      backdrop-filter: blur(12px);
       border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     }
 
     nav {
-      max-width: 1100px;
+      max-width: 1150px;
       margin: 0 auto;
       padding: 18px 20px;
       display: flex;
@@ -45,9 +53,9 @@
     }
 
     .logo {
-      font-weight: 800;
+      font-weight: 900;
       color: #5eead4;
-      letter-spacing: 0.5px;
+      letter-spacing: 1px;
     }
 
     .nav-links {
@@ -57,17 +65,21 @@
       color: #cbd5e1;
     }
 
+    .nav-links a {
+      transition: 0.2s;
+    }
+
     .nav-links a:hover {
       color: #5eead4;
     }
 
     .hero {
-      max-width: 1100px;
+      max-width: 1150px;
       margin: 0 auto;
-      padding: 90px 20px 80px;
+      padding: 95px 20px 80px;
       display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 40px;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 45px;
       align-items: center;
     }
 
@@ -75,7 +87,7 @@
       display: inline-block;
       padding: 8px 14px;
       border-radius: 999px;
-      border: 1px solid rgba(94, 234, 212, 0.4);
+      border: 1px solid rgba(94, 234, 212, 0.45);
       color: #5eead4;
       background: rgba(94, 234, 212, 0.08);
       font-size: 14px;
@@ -83,27 +95,30 @@
     }
 
     h1 {
-      font-size: 50px;
+      font-size: 54px;
       line-height: 1.12;
       margin-bottom: 22px;
+      letter-spacing: -1px;
     }
 
     .hero p {
       font-size: 19px;
       color: #cbd5e1;
       margin-bottom: 30px;
+      max-width: 650px;
     }
 
     .buttons {
       display: flex;
       flex-wrap: wrap;
       gap: 14px;
+      margin-bottom: 28px;
     }
 
     .btn {
       padding: 13px 20px;
       border-radius: 12px;
-      font-weight: 700;
+      font-weight: 800;
       transition: 0.2s;
     }
 
@@ -118,38 +133,76 @@
     }
 
     .btn:hover {
-      transform: translateY(-2px);
+      transform: translateY(-3px);
+    }
+
+    .status-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .status {
+      padding: 10px 14px;
+      border-radius: 12px;
+      background: rgba(15, 23, 42, 0.75);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: #cbd5e1;
+      font-size: 13px;
+    }
+
+    .status strong {
+      color: #5eead4;
     }
 
     .visual-card {
       position: relative;
-      min-height: 350px;
-      border-radius: 28px;
+      min-height: 380px;
+      border-radius: 30px;
       background:
-        radial-gradient(circle at 20% 20%, rgba(94, 234, 212, 0.25), transparent 30%),
-        radial-gradient(circle at 80% 60%, rgba(56, 189, 248, 0.25), transparent 28%),
-        rgba(15, 23, 42, 0.9);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+        linear-gradient(135deg, rgba(15, 23, 42, 0.96), rgba(8, 47, 73, 0.72)),
+        radial-gradient(circle at 20% 20%, rgba(94, 234, 212, 0.28), transparent 32%),
+        radial-gradient(circle at 80% 70%, rgba(56, 189, 248, 0.24), transparent 28%);
+      border: 1px solid rgba(255, 255, 255, 0.11);
       overflow: hidden;
-      box-shadow: 0 20px 70px rgba(0, 0, 0, 0.35);
+      box-shadow: 0 25px 80px rgba(0, 0, 0, 0.38);
+    }
+
+    .visual-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(94, 234, 212, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(94, 234, 212, 0.08) 1px, transparent 1px);
+      background-size: 34px 34px;
+      mask-image: linear-gradient(to bottom, black, transparent);
     }
 
     .chip {
       position: absolute;
-      width: 110px;
-      height: 110px;
+      width: 125px;
+      height: 125px;
       left: 50%;
-      top: 50%;
+      top: 47%;
       transform: translate(-50%, -50%);
-      border-radius: 20px;
-      background: rgba(2, 6, 23, 0.9);
+      border-radius: 22px;
+      background: rgba(2, 6, 23, 0.92);
       border: 2px solid #5eead4;
-      box-shadow: 0 0 35px rgba(94, 234, 212, 0.35);
+      box-shadow: 0 0 45px rgba(94, 234, 212, 0.45);
       display: flex;
       align-items: center;
       justify-content: center;
       color: #5eead4;
-      font-weight: 800;
+      font-weight: 900;
+      letter-spacing: 1px;
+      animation: pulse 3s infinite;
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 25px rgba(94, 234, 212, 0.25); }
+      50% { box-shadow: 0 0 60px rgba(94, 234, 212, 0.62); }
+      100% { box-shadow: 0 0 25px rgba(94, 234, 212, 0.25); }
     }
 
     .node {
@@ -161,59 +214,61 @@
       box-shadow: 0 0 24px #5eead4;
     }
 
-    .node:nth-child(1) { left: 18%; top: 24%; }
-    .node:nth-child(2) { left: 76%; top: 22%; }
-    .node:nth-child(3) { left: 22%; top: 72%; }
-    .node:nth-child(4) { left: 78%; top: 72%; }
+    .node.n1 { left: 16%; top: 22%; }
+    .node.n2 { left: 77%; top: 20%; }
+    .node.n3 { left: 20%; top: 72%; }
+    .node.n4 { left: 80%; top: 74%; }
+    .node.n5 { left: 50%; top: 14%; background: #38bdf8; box-shadow: 0 0 24px #38bdf8; }
 
     .line {
       position: absolute;
       height: 2px;
       background: linear-gradient(90deg, transparent, #38bdf8, transparent);
       opacity: 0.85;
-      animation: flow 2s infinite linear;
+      animation: flow 2.2s infinite linear;
     }
 
-    .line1 { width: 230px; left: 22%; top: 31%; transform: rotate(10deg); }
-    .line2 { width: 240px; left: 28%; top: 68%; transform: rotate(-10deg); }
-    .line3 { width: 200px; left: 24%; top: 50%; transform: rotate(90deg); }
-    .line4 { width: 200px; left: 50%; top: 50%; transform: rotate(0deg); }
+    .line1 { width: 235px; left: 21%; top: 29%; transform: rotate(9deg); }
+    .line2 { width: 250px; left: 28%; top: 68%; transform: rotate(-10deg); }
+    .line3 { width: 210px; left: 22%; top: 50%; transform: rotate(85deg); }
+    .line4 { width: 220px; left: 48%; top: 50%; transform: rotate(0deg); }
+    .line5 { width: 170px; left: 42%; top: 27%; transform: rotate(90deg); }
 
     @keyframes flow {
-      0% { opacity: 0.25; }
+      0% { opacity: 0.2; }
       50% { opacity: 1; }
-      100% { opacity: 0.25; }
+      100% { opacity: 0.2; }
     }
 
     .code-box {
       position: absolute;
-      left: 30px;
-      right: 30px;
-      bottom: 28px;
-      padding: 16px;
+      left: 28px;
+      right: 28px;
+      bottom: 26px;
+      padding: 17px;
       border-radius: 18px;
       background: rgba(2, 6, 23, 0.78);
-      border: 1px solid rgba(94, 234, 212, 0.25);
+      border: 1px solid rgba(94, 234, 212, 0.28);
       color: #a7f3d0;
       font-family: Consolas, monospace;
       font-size: 14px;
     }
 
     section {
-      max-width: 1100px;
+      max-width: 1150px;
       margin: 0 auto;
-      padding: 70px 20px;
+      padding: 75px 20px;
     }
 
     .section-title {
-      font-size: 34px;
+      font-size: 35px;
       margin-bottom: 16px;
     }
 
     .section-desc {
       color: #cbd5e1;
-      margin-bottom: 34px;
-      max-width: 760px;
+      margin-bottom: 35px;
+      max-width: 780px;
     }
 
     .grid {
@@ -223,16 +278,18 @@
     }
 
     .card {
-      padding: 24px;
-      border-radius: 22px;
+      padding: 25px;
+      border-radius: 23px;
       background: rgba(15, 23, 42, 0.86);
       border: 1px solid rgba(255, 255, 255, 0.09);
-      transition: 0.2s;
+      transition: 0.22s;
+      min-height: 155px;
     }
 
     .card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(94, 234, 212, 0.35);
+      transform: translateY(-7px);
+      border-color: rgba(94, 234, 212, 0.4);
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.25);
     }
 
     .card h3 {
@@ -244,6 +301,33 @@
     .card p {
       color: #cbd5e1;
       font-size: 15px;
+    }
+
+    .number-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .number-card {
+      padding: 22px;
+      border-radius: 20px;
+      background: rgba(2, 6, 23, 0.62);
+      border: 1px solid rgba(94, 234, 212, 0.18);
+      text-align: center;
+    }
+
+    .number-card strong {
+      display: block;
+      font-size: 30px;
+      color: #38bdf8;
+      margin-bottom: 6px;
+    }
+
+    .number-card span {
+      color: #cbd5e1;
+      font-size: 14px;
     }
 
     .timeline {
@@ -264,26 +348,35 @@
       color: #38bdf8;
     }
 
+    .highlight {
+      color: #5eead4;
+      font-weight: 800;
+    }
+
     footer {
-      padding: 40px 20px;
+      padding: 42px 20px;
       text-align: center;
       color: #94a3b8;
       border-top: 1px solid rgba(255, 255, 255, 0.08);
       background: #020617;
     }
 
-    @media (max-width: 800px) {
+    @media (max-width: 850px) {
       .hero {
         grid-template-columns: 1fr;
         padding-top: 60px;
       }
 
       h1 {
-        font-size: 38px;
+        font-size: 39px;
       }
 
       .grid {
         grid-template-columns: 1fr;
+      }
+
+      .number-grid {
+        grid-template-columns: repeat(2, 1fr);
       }
 
       .timeline {
@@ -300,13 +393,13 @@
 <body>
   <header>
     <nav>
-      <div class="logo">DAESUNG KIM</div>
+      <div class="logo">KIM DAESUNG</div>
       <div class="nav-links">
         <a href="#about">소개</a>
-        <a href="#network">컴퓨터 네트워크</a>
+        <a href="#network">네트워크</a>
         <a href="#electrical">전기공학</a>
-        <a href="#project">미니프로젝트</a>
-        <a href="#contact">마무리</a>
+        <a href="#skills">학습내용</a>
+        <a href="#project">프로젝트</a>
       </div>
     </nav>
   </header>
@@ -315,35 +408,43 @@
     <section class="hero">
       <div>
         <div class="badge">Kyungnam University · Electrical Engineering</div>
-        <h1>전기공학과 네트워크를 연결하는 학생, 김대성입니다.</h1>
+        <h1>Electrical Engineering &<br />Computer Network</h1>
         <p>
-          안녕하세요. 경남대학교 전기공학과 소속 김대성입니다.
-          이 홈페이지는 컴퓨터네트워크 수업의 미니프로젝트로 제작한 자기소개 웹사이트입니다.
+          경남대학교 전기공학과 김대성의 포트폴리오 웹사이트입니다.
+          컴퓨터네트워크 수업에서 배운 웹 배포 과정과 전공 관련 내용을 함께 정리했습니다.
         </p>
 
         <div class="buttons">
           <a class="btn btn-primary" href="#about">자기소개 보기</a>
-          <a class="btn btn-secondary" href="#project">프로젝트 보기</a>
+          <a class="btn btn-secondary" href="#project">프로젝트 과정 보기</a>
+        </div>
+
+        <div class="status-row">
+          <div class="status"><strong>STATUS</strong> ONLINE</div>
+          <div class="status"><strong>SERVER</strong> GitHub Pages</div>
+          <div class="status"><strong>PROTOCOL</strong> HTTP / HTTPS</div>
         </div>
       </div>
 
       <div class="visual-card">
-        <div class="node"></div>
-        <div class="node"></div>
-        <div class="node"></div>
-        <div class="node"></div>
+        <div class="node n1"></div>
+        <div class="node n2"></div>
+        <div class="node n3"></div>
+        <div class="node n4"></div>
+        <div class="node n5"></div>
 
         <div class="line line1"></div>
         <div class="line line2"></div>
         <div class="line line3"></div>
         <div class="line line4"></div>
+        <div class="line line5"></div>
 
-        <div class="chip">NETWORK</div>
+        <div class="chip">PORTFOLIO</div>
 
         <div class="code-box">
-          GET /daesung.html HTTP/1.1<br />
-          Department: Electrical Engineering<br />
-          Status: 200 OK
+          GET /index.html HTTP/1.1<br />
+          Host: daesung-website.github.io<br />
+          Response: 200 OK
         </div>
       </div>
     </section>
@@ -351,8 +452,9 @@
     <section id="about">
       <h2 class="section-title">자기소개</h2>
       <p class="section-desc">
-        저는 경남대학교 전기공학과에서 전기, 전자, 제어, 회로, 프로그래밍과 관련된 내용을 배우고 있습니다.
-        전기공학의 기본 이론을 바탕으로 실제 시스템을 이해하고, 컴퓨터네트워크 수업을 통해 인터넷과 데이터 통신의 구조를 함께 학습하고 있습니다.
+        안녕하세요. 저는 <span class="highlight">경남대학교 전기공학과 김대성</span>입니다.
+        전기공학의 기초 이론과 컴퓨터네트워크의 동작 원리를 함께 학습하며,
+        실제로 동작하는 시스템을 이해하고 구현하는 데 관심을 가지고 있습니다.
       </p>
 
       <div class="grid">
@@ -371,44 +473,66 @@
           <p>전기공학, 제어, 회로, 임베디드 시스템, 컴퓨터 네트워크</p>
         </div>
       </div>
+
+      <div class="number-grid">
+        <div class="number-card">
+          <strong>01</strong>
+          <span>HTML/CSS 웹페이지 제작</span>
+        </div>
+
+        <div class="number-card">
+          <strong>02</strong>
+          <span>GitHub Pages 배포</span>
+        </div>
+
+        <div class="number-card">
+          <strong>03</strong>
+          <span>컴퓨터네트워크 학습</span>
+        </div>
+
+        <div class="number-card">
+          <strong>04</strong>
+          <span>전기공학 전공 기반</span>
+        </div>
+      </div>
     </section>
 
     <section id="network">
       <h2 class="section-title">컴퓨터 네트워크</h2>
       <p class="section-desc">
-        컴퓨터네트워크는 컴퓨터와 컴퓨터가 데이터를 주고받는 원리를 배우는 분야입니다.
-        우리가 웹사이트에 접속할 때도 IP 주소, DNS, TCP/IP, HTTP 같은 기술들이 함께 동작합니다.
+        컴퓨터네트워크는 컴퓨터와 서버가 데이터를 주고받는 과정을 이해하는 분야입니다.
+        웹사이트 접속 과정에는 IP 주소, DNS, TCP/IP, HTTP, HTTPS 등 다양한 기술이 함께 동작합니다.
       </p>
 
       <div class="grid">
         <div class="card">
           <h3>TCP/IP</h3>
-          <p>인터넷 통신의 기본 구조이며, 데이터를 목적지까지 전달하기 위한 핵심 프로토콜입니다.</p>
+          <p>인터넷에서 데이터를 주고받기 위한 기본 통신 구조를 이해합니다.</p>
         </div>
 
         <div class="card">
           <h3>DNS</h3>
-          <p>사람이 기억하기 쉬운 도메인 이름을 실제 IP 주소로 변환하는 시스템입니다.</p>
+          <p>도메인 이름을 실제 서버의 IP 주소로 변환하는 과정을 학습합니다.</p>
         </div>
 
         <div class="card">
           <h3>HTTP/HTTPS</h3>
-          <p>웹브라우저와 웹서버가 정보를 주고받는 방식이며, HTTPS는 보안 연결을 제공합니다.</p>
+          <p>브라우저와 웹서버가 요청과 응답을 주고받는 방식을 이해합니다.</p>
         </div>
 
         <div class="card">
           <h3>IP 주소와 포트</h3>
-          <p>IP 주소는 장치를 구분하고, 포트는 장치 안에서 실행되는 프로그램을 구분합니다.</p>
+          <p>네트워크 장치와 프로그램을 구분하는 주소 체계를 정리합니다.</p>
         </div>
 
         <div class="card">
           <h3>Wireshark</h3>
-          <p>실제 네트워크 패킷을 캡처하고 분석하여 통신 과정을 눈으로 확인할 수 있습니다.</p>
+          <p>실제 패킷을 캡처하고 분석하며 네트워크 흐름을 확인합니다.</p>
         </div>
 
         <div class="card">
           <h3>GitHub Pages</h3>
-          <p>HTML 파일을 GitHub 저장소에 올려 정적 웹사이트로 배포할 수 있는 서비스입니다.</p>
+          <p>정적 HTML 파일을 인터넷에 공개하는 웹 배포 과정을 경험합니다.</p>
         </div>
       </div>
     </section>
@@ -416,14 +540,14 @@
     <section id="electrical">
       <h2 class="section-title">전기공학 소개</h2>
       <p class="section-desc">
-        전기공학은 전기에너지의 생산, 변환, 제어, 전달, 활용을 다루는 학문입니다.
-        발전소에서 만들어진 전기가 가정과 산업현장으로 전달되는 과정부터, 전자회로와 제어 시스템까지 폭넓은 분야를 포함합니다.
+        전기공학은 전기에너지의 발생, 전달, 변환, 제어, 활용을 다루는 학문입니다.
+        회로, 제어, 전력, 전자, 임베디드 시스템 등 다양한 분야와 연결되어 있습니다.
       </p>
 
       <div class="grid">
         <div class="card">
           <h3>회로 이론</h3>
-          <p>전압, 전류, 저항, 전력의 관계를 이해하고 전기 시스템의 기본 원리를 학습합니다.</p>
+          <p>전압, 전류, 저항, 전력의 관계를 바탕으로 전기 시스템의 기본 원리를 학습합니다.</p>
         </div>
 
         <div class="card">
@@ -433,32 +557,87 @@
 
         <div class="card">
           <h3>전력 시스템</h3>
-          <p>전기를 생산하고 송전, 배전하여 사용하는 전체적인 흐름을 이해합니다.</p>
+          <p>발전, 송전, 배전, 부하까지 전기에너지의 흐름을 이해합니다.</p>
+        </div>
+
+        <div class="card">
+          <h3>전자회로</h3>
+          <p>다이오드, 트랜지스터, 센서 등 전자 부품을 활용한 회로 구성을 학습합니다.</p>
+        </div>
+
+        <div class="card">
+          <h3>임베디드 시스템</h3>
+          <p>아두이노와 센서 등을 이용해 실제로 동작하는 시스템을 구현합니다.</p>
+        </div>
+
+        <div class="card">
+          <h3>융합적 사고</h3>
+          <p>전기공학 지식과 소프트웨어, 네트워크 기술을 함께 활용하는 능력을 기릅니다.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2 class="section-title">학습 내용 정리</h2>
+      <p class="section-desc">
+        이번 웹사이트는 단순히 HTML을 작성하는 것에서 끝나는 것이 아니라,
+        웹페이지가 인터넷에 공개되는 과정을 직접 경험하는 데 의미가 있습니다.
+      </p>
+
+      <div class="grid">
+        <div class="card">
+          <h3>HTML</h3>
+          <p>웹페이지의 제목, 문단, 메뉴, 섹션 등 기본 구조를 작성했습니다.</p>
+        </div>
+
+        <div class="card">
+          <h3>CSS</h3>
+          <p>색상, 레이아웃, 카드 디자인, 반응형 화면, 애니메이션 효과를 적용했습니다.</p>
+        </div>
+
+        <div class="card">
+          <h3>JavaScript</h3>
+          <p>메뉴 클릭 시 원하는 위치로 부드럽게 이동하는 기능을 구현했습니다.</p>
+        </div>
+
+        <div class="card">
+          <h3>Repository</h3>
+          <p>GitHub 저장소를 생성하고 index.html 파일을 관리했습니다.</p>
+        </div>
+
+        <div class="card">
+          <h3>Pages</h3>
+          <p>GitHub Pages 기능을 사용해 작성한 파일을 실제 웹사이트로 배포했습니다.</p>
+        </div>
+
+        <div class="card">
+          <h3>Domain</h3>
+          <p>도메인 이름과 웹사이트 주소가 연결되는 개념을 이해했습니다.</p>
         </div>
       </div>
     </section>
 
     <section id="project">
-      <h2 class="section-title">미니프로젝트 구성</h2>
+      <h2 class="section-title">미니프로젝트 제작 과정</h2>
       <p class="section-desc">
-        이 웹사이트는 단순한 자기소개 페이지가 아니라, 컴퓨터네트워크 수업에서 배운 웹, 도메인, GitHub Pages 배포 개념을 직접 적용한 결과물입니다.
+        아래 과정은 자기소개 홈페이지를 제작하고 인터넷에 공개하기까지의 주요 단계입니다.
       </p>
 
       <div class="timeline">
-        <div class="item"><strong>1단계</strong> GitHub 저장소 생성</div>
-        <div class="item"><strong>2단계</strong> index.html 파일 작성</div>
-        <div class="item"><strong>3단계</strong> GitHub Pages 배포 설정</div>
-        <div class="item"><strong>4단계</strong> 웹사이트 접속 확인</div>
-        <div class="item"><strong>5단계</strong> 자기소개 및 전공 내용 구성</div>
-        <div class="item"><strong>6단계</strong> 도메인 연결 및 최종 제출</div>
+        <div class="item"><strong>1단계</strong> GitHub 계정 로그인 및 저장소 생성</div>
+        <div class="item"><strong>2단계</strong> index.html 파일 생성 및 기본 코드 작성</div>
+        <div class="item"><strong>3단계</strong> 자기소개, 전공 소개, 네트워크 내용 구성</div>
+        <div class="item"><strong>4단계</strong> CSS를 이용한 디자인 및 반응형 화면 제작</div>
+        <div class="item"><strong>5단계</strong> GitHub Pages 설정으로 웹사이트 배포</div>
+        <div class="item"><strong>6단계</strong> 최종 접속 확인 및 제출용 홈페이지 완성</div>
       </div>
     </section>
 
-    <section id="contact">
+    <section id="finish">
       <h2 class="section-title">마무리</h2>
       <p class="section-desc">
-        이번 미니프로젝트를 통해 HTML을 이용한 웹페이지 제작 과정과 GitHub Pages를 활용한 배포 과정을 직접 경험했습니다.
-        또한 컴퓨터네트워크에서 배우는 도메인, 웹서버, HTTP, 인터넷 주소 체계를 실제 웹사이트 제작 과정과 연결해 이해할 수 있었습니다.
+        이번 미니프로젝트를 통해 웹페이지 제작, GitHub 저장소 관리, GitHub Pages 배포 과정을 직접 경험했습니다.
+        또한 컴퓨터네트워크에서 배우는 웹 접속, 서버, 도메인, HTTP 개념이 실제 홈페이지 제작 과정과 연결된다는 점을 확인할 수 있었습니다.
       </p>
 
       <div class="grid">
@@ -481,7 +660,7 @@
   </main>
 
   <footer>
-    김대성 자기소개 홈페이지 | Computer Network Mini Project | GitHub Pages
+    © 2026 Kim Daesung Portfolio Website · Computer Network Mini Project
   </footer>
 
   <script>
